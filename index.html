@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Bank IT</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- PRE-LOGIN -->
+      <div class="pre-login d-flex container h-100">
+        <!--TOGGLE DISPLAY-->
+        <div
+          class="login d-flex flex-lg-row flex-column justify-content-center align-items-center h-100 w-100"
+        >
+          <div
+            class="d-none d-lg-flex flex-lg-column justify-content-center align-items-center text-white login-captions-section w-50"
+          >
+            <div class="bank-name display-1">Bank IT</div>
+            <p class="bank-caption lead">Bringing the banking to you.</p>
+            <p class="bank-caption">Wherever.</p>
+            <p class="bank-caption">Whenever.</p>
+          </div>
+          <div class="bank-name2 display-1">Bank IT</div>
+          <div
+            class="login-form-section d-flex flex-column justify-content-center align-items-center w-50"
+            id="login-form-section"
+          >
+            <form
+              class="login-form d-flex flex-column justify-content-center shadow align-items-center text-secondary"
+            >
+              <div class="mb-4">
+                <h1 class="display-3">Login</h1>
+              </div>
+              <div class="form-group w-75">
+                <label for="cardnumber" class="">Card Number:</label>
+                <input type="text" class="form-control" id="cardNumber" />
+              </div>
+              <div class="form-group w-75">
+                <label for="pin">PIN</label>
+                <input type="password" class="form-control" id="pin" />
+              </div>
+              <button class="btn btn-primary btn-lg shadow-sm login-btn">
+                Log-In
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="loading-screen"> -->
+      <!-- POST LOGIN -->
+      <div class="d-none post-login h-100">
+        <!--TOGGLE DISPLAY-->
+        <div class="container d-flex align-items-center h-100">
+          <div class="dashboard bg-light d-flex w-100 shadow">
+            <div id="menu" class="menu d-flex flex-column align-items-center">
+              <i class="fas fa-times fa-2x"></i>
+              <i class="fas fa-user fa-5x mt-5"></i>
+              <h2 class="username mt-3">Name</h2>
+              <h1 class="balance my-4">$1000</h1>
+              <ul class="menu-links">
+                <li class="home-link">Home</li>
+                <li class="deposit-link">Deposit</li>
+                <li class="withdraw-link">Withdraw</li>
+                <li class="transfer-link">Transfer</li>
+                <li class="logout-link">Log-Out</li>
+              </ul>
+            </div>
+
+            <div class="blur-overlay">
+              <div id="menu-btn">
+                <i class="fas fa-bars fa-2x" style="color: #9face6"></i>
+              </div>
+              <!-- HOME/TRANSACTIONS -->
+              <div
+                id="transaction-contents"
+                class="transaction-contents d-none flex-column justify-content-center align-items-center"
+              >
+                <div class="transactions-title h-25">
+                  <h1 class="mt-5">Transactions</h1>
+                </div>
+                <div class="transactions h-75 w-100"></div>
+              </div>
+
+              <!-- DEPOSITS -->
+              <div
+                class="deposit-contents d-none flex-column justify-content-center align-items-center"
+              >
+                <div class="deposit-title h-25">
+                  <h1 class="mt-5">Deposit</h1>
+                </div>
+                <div class="deposit h-75 w-100">
+                  <form class="w-50 mx-auto text-center">
+                    <div class="form-group">
+                      <label for="deposit">Deposit Amount:</label>
+                      <input
+                        type="text"
+                        id="deposit"
+                        class="deposit-input form-control form-control-lg"
+                      />
+                      <small
+                        class="d-none invalid-deposit-msg form-text text-danger"
+                        >Invalid amount. Amount must be above or equal to
+                        $5</small
+                      >
+                      <small
+                        class="d-none valid-deposit-msg form-text text-success"
+                        >Successfully deposited</small
+                      >
+                    </div>
+                    <button class="btn btn-primary deposit-btn">Deposit</button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- WITHDRAW -->
+              <div
+                class="withdraw-contents d-none flex-column justify-content-center align-items-center"
+              >
+                <div class="withdraw-title h-25">
+                  <h1 class="mt-5">Withdraw</h1>
+                </div>
+                <div class="withdraw h-75 w-100">
+                  <form class="w-50 mx-auto text-center">
+                    <div class="form-group">
+                      <label for="deposit">Withdraw Amount:</label>
+                      <input
+                        type="text"
+                        id="withdraw"
+                        class="withdraw-input form-control form-control-lg"
+                      />
+                      <small
+                        class="d-none invalid-withdraw-msg form-text text-danger"
+                        >Invalid amount. Amount must be lower than balance.
+                      </small>
+                      <small
+                        class="d-none valid-withdraw-msg form-text text-success"
+                        >Successfully Withdrawed
+                      </small>
+                    </div>
+                    <button class="btn btn-primary withdraw-btn">
+                      Withdraw
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- TRANSFER -->
+              <div
+                class="transfer-contents d-none flex-column justify-content-center align-items-center"
+              >
+                <div class="transfer-title h-25">
+                  <h1 class="mt-5">Transfer</h1>
+                </div>
+                <div class="transfer h-75 w-100">
+                  <form class="w-50 mx-auto text-center">
+                    <div class="form-group">
+                      <label for="transfer-amount">Transfer Amount:</label>
+                      <input
+                        type="text"
+                        id="transfer-amount"
+                        class="transfer-amount form-control form-control-lg"
+                      />
+                      <small
+                        class="d-none invalid-transfer-amount-msg form-text text-danger"
+                        >Invalid amount. Amount must be lower than balance.
+                      </small>
+                    </div>
+                    <div class="form-group">
+                      <label for="transfer-recipient"
+                        >Transfer Recipient:</label
+                      >
+                      <input
+                        type="text"
+                        id="transfer-recipient"
+                        class="transfer-recipient form-control form-control-lg"
+                      />
+                      <small
+                        class="d-none invalid-transfer-recipient-msg form-text text-danger"
+                        >Invalid recipient. Please enter valid name.
+                      </small>
+                      <small
+                        class="d-none success-transfer-msg form-text text-success"
+                        >Successfully Sent!
+                      </small>
+                    </div>
+                    <button class="btn btn-primary transfer-btn">
+                      Transfer
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+    <!-- END OF WRAPPER-->
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
